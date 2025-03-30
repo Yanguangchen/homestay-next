@@ -1,0 +1,43 @@
+.flexContainer {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center;
+}
+
+/* Not currently used, but kept for reference if needed. */
+.flexContainer1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center;
+  width: 100%;
+}
+
+/* Also not currently used in the code, but preserved. */
+.buttonStyle {
+  margin-top: 5%;
+  font-size: 100%;
+  padding: 1%;
+  font-family: Montserrat, sans-serif;
+  background-color: #051d40;
+  color: #fff;
+}
+
+/* Also not used, but preserved for potential image styling. */
+.photoStyle {
+  margin-top: 5%;
+  width: 100%;
+}
+
+/* If you need a hidden variant: .photoStyleHidden */
+.photoStyleHidden {
+  display: none;
+}
+
+/* The review widget container */
+.reviewWidget {
+  width: 80%;
+}
+

@@ -1,0 +1,46 @@
+.containerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  /* Optional title class if you ever need to style a heading */
+  .title {
+    text-align: center;
+    color: #000;
+  }
+  
+  .canvaEmbed {
+    position: relative;
+    width: 100%;
+    padding-bottom: 0;
+  }
+  
+  /* 
+    If you want to style the iframe via CSS instead of inline styles,
+    you can apply .canvaIframe here:
+  */
+  .canvaIframe {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .button {
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    border-radius: 15px;
+    }
+  

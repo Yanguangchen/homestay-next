@@ -1,0 +1,122 @@
+/* src/components/featurecards.css */
+
+/* --- Container for All Feature Cards --- */
+.feature-cards-container {
+  width: 100%;
+  padding: 2rem 1rem;
+  background: #f9f9f9; /* Light background for contrast */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+}
+
+/* --- Grid Layout for Feature Cards --- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px; /* Optional: Limit maximum width for better readability */
+}
+
+/* --- Individual Feature Card --- */
+.feature-card {
+  background: linear-gradient(15deg, #000000, #737070); /* Darker gradient on hover */
+  color: #fff; /* White text for contrast */
+  border-radius: 1.5rem; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle box-shadow */
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Ensure consistent height */
+  height: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+/* --- Card Icon --- */
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffffff; /* Ensure icon color matches text */
+  transition: transform 0.3s ease;
+}
+
+/* --- Hover Effects for Feature Cards --- */
+.feature-card:hover {
+  transform: translateY(-10px); /* Lift the card on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  background: linear-gradient(-15deg, #000000, #737070); /* Darker gradient on hover */
+
+}
+
+/* Optional: Rotate Icon on Hover */
+.feature-card:hover .card-icon {
+  transform: rotate(20deg);
+}
+
+/* --- Card Heading --- */
+.card-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+/* --- Card Description --- */
+.card-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+}
+
+/* --- Responsive Design --- */
+
+/* Maintain three columns on all screen sizes */
+@media (max-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .card-heading {
+    font-size: 1.75rem;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .feature-card {
+    padding: 0.5rem;
+  }
+
+  .card-heading {
+    font-size: 1rem;
+  }
+
+  .card-description {
+    font-size: 0.5rem;
+  }
+
+  /* Adjust icon size on very small screens */
+  .card-icon {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "medtrust-next"
+location: "asia-east1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "medtrust-next-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

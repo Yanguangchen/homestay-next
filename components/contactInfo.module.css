@@ -1,0 +1,109 @@
+/* --- Wraps entire Contact section --- */
+.containerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin-top: 5em; /* Reduced for a cleaner look */
+  margin-bottom: 3%;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif; /* Consistent font */
+}
+
+/* Optional extra styling for the "contact" portion if you need it */
+.contact {
+  /* Additional styling for the main contact container (if needed) */
+}
+
+/* Main heading styling (instead of global h1) */
+.contactTitle {
+  color: #21482c;
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+
+/* --- Grid container for the two columns --- */
+.bodyStyle {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns side-by-side */
+  gap: 2rem;                     /* Space between columns */
+  color: white;
+  margin-top: 2rem;
+}
+
+/* Additional class if you want to differentiate "contactBody" styling */
+.contactBody {
+  /* Additional styling for the contact body container (if needed) */
+}
+
+/* --- Each card (left & right columns) --- */
+.subContent {
+  /* Gradient background */
+  background: linear-gradient(15deg, #000000, #737070); /* Darker gradient on hover */
+  
+  border-radius: 1.5rem;
+  padding: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+
+  /* Box Shadow for depth */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* Transition for smooth hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Hover lift effect --- */
+.subContent:hover {
+  transform: translateY(-6px); /* Slightly increased lift for prominence */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+
+  /* Optional: Slightly adjust the gradient on hover */
+  background: linear-gradient(-15deg, #000000, #737070); /* Darker gradient on hover */
+}
+
+/* --- Contact paragraph --- */
+.pStyle {
+  margin: 0; /* Remove default margin */
+  color: #ffffff; /* Ensure text is readable against the gradient */
+}
+
+/* --- Sub-heading (Service Hours) --- */
+.h3Style {
+  color: #ffffff; /* White text for contrast */
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* --- Service hours text --- */
+.openingTime {
+  font-weight: 600;
+  margin: 0;
+  color: #ffffff; /* White text for consistency */
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 768px) {
+  .bodyStyle {
+    grid-template-columns: 1fr; /* Stack vertically on smaller screens */
+  }
+  .subContent {
+    font-size: 0.95rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .subContent {
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+}

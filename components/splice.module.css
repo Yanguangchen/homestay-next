@@ -1,0 +1,49 @@
+/* Optional video styling (not currently used in the component, 
+   but preserved in case you need it later) */
+   .videoContainer,
+   .videoStyle {
+     overflow: hidden;
+     width: 100%;
+   }
+   
+   /* Container wrapper & spline container share similar styling */
+   .containerWrapper,
+   .splineContainer {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     margin-top: 0 !important; /* If you want to override global margin-top */
+   }
+   
+   /* Responsive rules for smaller screens */
+   @media (max-width: 430px) {
+     .containerWrapper {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 100%;
+       height: 50vh;
+     }
+     .splineContainer {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 100%;
+       height: 50vh;
+       margin-bottom: 10%;
+
+     }
+   }
+   
+   /* If you want to hide a video container on default 
+      (not currently used but left for reference) */
+   .videoContainer {
+     display: none;
+   }
+   
+   /* Dark mode container (empty here, add styles as needed) */
+   .darkmodeContainer {
+     /* e.g. background-color: #333; */
+   }
+   

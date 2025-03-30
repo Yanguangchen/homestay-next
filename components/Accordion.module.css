@@ -1,0 +1,140 @@
+/* --- General Typography & Defaults --- */
+.accordionContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway", serif;
+}
+
+/* Outer wrapper for each accordion item */
+.accordionItem {
+  /* Subtle box-shadow for card effect */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #fff; /* Card background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem; /* Adjust spacing as needed */
+  font-family: "Raleway", serif;
+}
+
+/* Top button (accordion header) with gradient background */
+.accordionButton {
+  display: flex;
+  justify-content: space-between; /* Space between title and icon */
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem; /* Adjust padding for better spacing */
+  text-align: left; /* Align text to the left */
+  transition: background 0.3s, transform 0.3s;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(15deg, #000000, #737070); /* Darker gradient on hover */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: "Montserrat", serif;
+
+  /* Rounded top corners */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+/* Hover effect for accordion button */
+.accordionButton:hover {
+  background: linear-gradient(-15deg, #000000, #737070); /* Darker gradient on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Accordion title text */
+.accordionTitle {
+  font-weight: 600;
+  font-size: 1.125rem; /* ~18px, adjust as needed */
+  font-family: "Montserrat", serif;
+}
+
+/* The "+" icon that rotates on open */
+.accordionIcon {
+  margin-left: 0.5rem;
+  transition: transform 0.3s;
+  font-size: 1.5rem; /* Increase icon size for better visibility */
+}
+
+/* Rotate icon 45deg when open (used in combination with .open class) */
+.accordionIcon.open {
+  transform: rotate(45deg);
+}
+
+/* Collapsible content container
+   - Animates via max-height
+   - Overflow hidden for the collapse effect
+*/
+.accordionContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  width: 100%;
+  background: #fff;
+}
+
+/* When open, use a large max-height to reveal content */
+.accordionContent.open {
+  max-height: 1000px; /* or any large enough value to fit your content */
+}
+
+/* Inner area where the actual content sits */
+.accordionInner {
+  padding: 1.5rem;
+  color: #333; /* Dark text for contrast on white background */
+  font-family: "Montserrat", serif;
+}
+
+/* Additional styling for your EmploymentAgencySection container */
+.employmentAgencySection {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  /* Optional: apply a background or remain transparent */
+}
+
+/* Section title styling */
+.sectionTitle {
+  font-size: 1.875rem; /* ~30px */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .accordionButton {
+    padding: 0.75rem 1.5rem; /* Adjust padding for smaller screens */
+    font-size: 0.95rem;
+  }
+
+  .accordionInner {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .accordionButton {
+    padding: 0.5rem 1rem; /* Further adjust padding */
+    font-size: 0.9rem;
+  }
+
+  .accordionInner {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .accordionIcon {
+    font-size: 1.25rem; /* Slightly smaller icon */
+  }
+}
