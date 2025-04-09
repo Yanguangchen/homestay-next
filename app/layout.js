@@ -176,6 +176,14 @@ export default function RootLayout({ children }) {
       </head>
 
       <body>
+        <script
+          src="https://static.elfsight.com/platform/platform.js"
+          async
+        ></script>
+        <div
+          class="elfsight-app-c6a27cf6-6681-4c2f-9ddf-12adebc1857e"
+          data-elfsight-app-lazy
+        ></div>
         <Link href="/admin">
           <button
             style={{
