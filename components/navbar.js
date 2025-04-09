@@ -122,7 +122,7 @@ function NavBar() {
               Contact
             </Link>
             <Link
-              href="//https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/04/09/07/20250409072726-G90M1ZE0.json"
+              href="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/04/09/07/20250409072726-G90M1ZE0.json"
               style={linkStyle}
               className="navlinks"
             >
@@ -174,7 +174,7 @@ function NavBar() {
               </Link>
 
               <Link
-                href="//https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/04/09/07/20250409072726-G90M1ZE0.json"
+                href="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/04/09/07/20250409072726-G90M1ZE0.json"
                 style={linkStyle}
                 className="navlinks"
                 onClick={toggleMenu}
