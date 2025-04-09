@@ -6,6 +6,10 @@
   border-radius: 13px;
 }
 
+.navlinks {
+  padding: 0;
+}
+
 .topbanner:hover {
   transform: scale(1.1);
 }

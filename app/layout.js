@@ -2,6 +2,7 @@ import "../styles/body.css";
 import "../styles/grid.css";
 import "../styles/navbar.css";
 import Navbar from "../components/navbar";
+import Link from "next/link";
 
 import Script from "next/script";
 
@@ -164,9 +165,35 @@ export default function RootLayout({ children }) {
         <title>
           sg-learninghub - Cultural and School Exchange Programs in Singapore
         </title>
+        <script
+          async
+          src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"
+        ></script>
+        <script
+          async
+          src="https://files.bpcontent.cloud/2025/04/09/07/20250409072725-7JS2HUV7.js"
+        ></script>
       </head>
 
       <body>
+        <Link href="/admin">
+          <button
+            style={{
+              position: "fixed",
+              top: "10px",
+              right: "10px",
+              padding: "10px 15px",
+              background: "linear-gradient(15deg, #cb479b, #5f06e2, #1f03f6);",
+              color: "white",
+              border: "none",
+              borderRadius: "4px",
+              cursor: "pointer",
+              fontFamily: "Montserrat, sans-serif",
+            }}
+          >
+            Sign in (Admin)
+          </button>
+        </Link>
         <Navbar />
 
         <div id="root"></div>

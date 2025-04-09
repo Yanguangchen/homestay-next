@@ -118,15 +118,22 @@ function NavBar() {
             <Link href="/StudyTours" style={linkStyle} className="navlinks">
               Study Tours
             </Link>
+            <Link href="/contact" style={linkStyle} className="navlinks">
+              Contact
+            </Link>
             <Link
-              href="https://chatgpt.com/g/g-dkK1GerG5-homestay-exchange-bot"
+              href="//https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/04/09/07/20250409072726-G90M1ZE0.json"
               style={linkStyle}
               className="navlinks"
             >
               Chat with our AI
             </Link>
-            <Link href="/contact" style={linkStyle} className="navlinks">
-              Contact
+            <Link
+              href="/Blogs"
+              style={linkStyle}
+              className="navlinks"
+            >
+              Blogs
             </Link>
           </div>
           {isMenuOpen && (
@@ -147,13 +154,7 @@ function NavBar() {
               >
                 Study Tours
               </Link>
-              <Link
-                href="https://chatgpt.com/g/g-dkK1GerG5-homestay-exchange-bot"
-                style={linkStyle}
-                className="navlinks"
-              >
-                Chat with our AI
-              </Link>
+
               <Link
                 href="/contact"
                 style={linkStyle}
@@ -161,6 +162,24 @@ function NavBar() {
                 onClick={toggleMenu}
               >
                 Contact
+              </Link>
+
+              <Link
+                href="/Blogs"
+                style={linkStyle}
+                className="navlinks"
+                onClick={toggleMenu}
+              >
+                Blogs
+              </Link>
+
+              <Link
+                href="//https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/04/09/07/20250409072726-G90M1ZE0.json"
+                style={linkStyle}
+                className="navlinks"
+                onClick={toggleMenu}
+              >
+                Chat with our AI
               </Link>
             </div>
           )}

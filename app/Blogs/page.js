@@ -1,6 +1,6 @@
-import MainPage from "../components/homepage"; // Import the HomePage component
-import "../styles/footer.css";
 import Link from "next/link";
+import "../../styles/footer.css";
+import TodaysArticle from "../todays-article/page"; // adjust the relative path if needed
 
 export const metadata = {
   title: "sg-learninghub - Cultural and School Exchange Programs in Singapore",
@@ -8,20 +8,11 @@ export const metadata = {
     "Explore cultural exchange programs in Singapore with sg-learninghub. Offering personalized homestay experiences and school exchange programs that foster cultural understanding and global friendships.",
 };
 
-export default function HomePage() {
+export default function VJetArticlePage() {
   return (
-    <main>
-      <script
-        async
-        src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"
-      ></script>
-      <script
-        async
-        src="https://files.bpcontent.cloud/2025/04/09/07/20250409072725-7JS2HUV7.js"
-      ></script>
+    <>
+      <TodaysArticle />
 
-      {/* Use the imported HomePage component */}
-      <MainPage />
       <footer>
         <div className="footerStyle">
           <div className="footerWrapper">
@@ -48,6 +39,6 @@ export default function HomePage() {
           </p>
         </div>
       </footer>
-    </main>
+    </>
   );
 }
