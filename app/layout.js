@@ -62,9 +62,10 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           rel="icon"
-          href="https://sg-learninghub.com/static/media/topBanner.85a5c4fd8f5c416022a6.png"
+          href="/apple-icon.png"
+          sizes="any"
         />
-        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
 
         {/* Stylesheets */}
         <link rel="stylesheet" href="/body.css" />
