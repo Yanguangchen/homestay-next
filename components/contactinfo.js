@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./contactInfo.module.css";
+import { ElfsightWidget } from "react-elfsight-widget";
 
 function ContactInfo() {
   return (
@@ -24,6 +25,10 @@ function ContactInfo() {
             Airport Blvd., #03-37 Terminal 3, Singapore 819663
           </p>
         </div>
+      </div>
+      
+      <div style={{ marginTop: "40px", width: "100%" }}>
+        <ElfsightWidget widgetId="0450dfe3-4235-4177-a2d0-bc862350342d" />
       </div>
     </div>
   );

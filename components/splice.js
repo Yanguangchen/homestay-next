@@ -20,6 +20,28 @@ function HeroSection() {
   return (
     <div className={styles.heroContainer}>
       {/* Parallax Background Elements (Dreamy Bubbles) */}
+      <div className={styles.bubbles}>
+        {[...Array(15)].map((_, i) => {
+          const size = Math.random() * 40 + 10;
+          const left = Math.random() * 100;
+          const delay = Math.random() * 15;
+          const duration = Math.random() * 10 + 10;
+          return (
+            <div
+              key={i}
+              className={styles.bubble}
+              style={{
+                width: `${size}px`,
+                height: `${size}px`,
+                left: `${left}%`,
+                animationDelay: `${delay}s`,
+                animationDuration: `${duration}s`,
+              }}
+            ></div>
+          );
+        })}
+      </div>
+
       <div 
         className={styles.parallaxBlob1}
         style={{ 

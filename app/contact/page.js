@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main>
+    <main className="animate-on-load-wrapper">
       <Contact />
       <Socials />
     </main>

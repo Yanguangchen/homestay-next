@@ -18,7 +18,7 @@ const Loading = () => <div>Loading...</div>;
 
 function Homepage() {
   return (
-    <div>
+    <div className="animate-on-load-wrapper">
       <Banner />
       <SpliceElement />
 

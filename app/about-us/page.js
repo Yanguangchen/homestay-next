@@ -8,7 +8,7 @@ export const metadata = {
 export default function AboutUs() {
   return (
     <>
-      <div style={{ padding: "40px 20px", maxWidth: "1000px", margin: "0 auto" }}>
+      <div className="animate-on-load-wrapper" style={{ padding: "40px 20px", maxWidth: "1000px", margin: "0 auto" }}>
         <section className="info-box" style={{ padding: "60px 40px", textAlign: "center", marginBottom: "60px" }}>
           <h1 style={{ 
             fontFamily: "'League Spartan', sans-serif", 

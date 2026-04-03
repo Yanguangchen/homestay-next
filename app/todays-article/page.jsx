@@ -47,7 +47,7 @@ export default function ArticlesList() {
     return <p className={styles.loading}>Loading articles...</p>;
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} animate-on-load-wrapper`}>
       <h2 className={styles.header}>Our Latest Posts</h2>
       {articles.length > 0 ? (
         articles.map((article) => (

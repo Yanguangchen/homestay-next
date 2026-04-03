@@ -8,9 +8,9 @@ export const metadata = {
 
 export default function VJetArticlePage() {
   return (
-    <>
+    <div className="animate-on-load-wrapper">
       <TodaysArticle />
       <Socials />
-    </>
+    </div>
   );
 }
