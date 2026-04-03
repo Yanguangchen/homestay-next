@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./contactInfo.module.css";
 import { ElfsightWidget } from "react-elfsight-widget";
