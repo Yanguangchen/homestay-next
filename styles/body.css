@@ -1,20 +1,122 @@
 body,
 html {
   margin: auto !important;
-  padding: none !important;
-  overflow-x: none;
-}
-body {
-  font-family: "Montserrat", sans-serif !important;
-  overflow-x: none !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-@media (max-width: 430px) {
-  h1 {
-    font-size: 150% !important;
-  }
-  .splineContainer {
-    width: 100% !important;
-    height: 300px !important;
-  }
+body {
+  font-family: "Montserrat", sans-serif !important;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 50%, #ffffff 100%);
+  background-attachment: fixed;
+  position: relative;
+  color: #374151; /* Neutral dark gray text */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(209, 213, 219, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(229, 231, 235, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(243, 244, 246, 0.1) 0%, transparent 50%);
+  filter: blur(120px);
+  z-index: -1;
+  pointer-events: none;
+  animation: float 25s infinite alternate ease-in-out;
+}
+
+/* Update motto and vision for neutral light mode */
+.motto-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  margin: 40px 0;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.motto-text {
+  font-family: 'League Spartan', 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  letter-spacing: -1px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.vision-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 20px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.vision-card {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vision-header {
+  font-family: 'League Spartan', 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.vision-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #4b5563;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.info-box {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  borderRadius: 20px;
+  padding: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }

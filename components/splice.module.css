@@ -1,49 +1,213 @@
-/* Optional video styling (not currently used in the component, 
-   but preserved in case you need it later) */
-   .videoContainer,
-   .videoStyle {
-     overflow: hidden;
-     width: 100%;
-   }
-   
-   /* Container wrapper & spline container share similar styling */
-   .containerWrapper,
-   .splineContainer {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     width: 100%;
-     margin-top: 0 !important; /* If you want to override global margin-top */
-   }
-   
-   /* Responsive rules for smaller screens */
-   @media (max-width: 430px) {
-     .containerWrapper {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       width: 100%;
-       height: 50vh;
-     }
-     .splineContainer {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       width: 100%;
-       height: 50vh;
-       margin-bottom: 10%;
+.heroContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
 
-     }
-   }
-   
-   /* If you want to hide a video container on default 
-      (not currently used but left for reference) */
-   .videoContainer {
-     display: none;
-   }
-   
-   /* Dark mode container (empty here, add styles as needed) */
-   .darkmodeContainer {
-     /* e.g. background-color: #333; */
-   }
-   
+.parallaxBlob1, .parallaxBlob2, .parallaxBlob3, .parallaxBlob4 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+  pointer-events: none;
+  animation: floatBubble 20s infinite alternate ease-in-out;
+}
+
+.parallaxBlob1 {
+  top: 10%;
+  left: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(95, 6, 226, 0.1) 0%, transparent 70%);
+}
+
+.parallaxBlob2 {
+  bottom: 10%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(203, 71, 155, 0.1) 0%, transparent 70%);
+  animation-delay: -5s;
+}
+
+.parallaxBlob3 {
+  top: 40%;
+  right: 15%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(31, 3, 246, 0.08) 0%, transparent 70%);
+  animation-delay: -10s;
+}
+
+.parallaxBlob4 {
+  bottom: 20%;
+  left: 15%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(95, 6, 226, 0.05) 0%, transparent 70%);
+  animation-delay: -15s;
+}
+
+@keyframes floatBubble {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.heroContent {
+  z-index: 10;
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+.glassCard {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 4rem;
+  border-radius: 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  max-width: 800px;
+  transition: transform 0.1s ease-out;
+}
+
+.heroTitle {
+  font-family: 'League Spartan', 'Montserrat', sans-serif;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.heroTitle span {
+  background: linear-gradient(
+    90deg, 
+    #cb479b, 
+    #5f06e2, 
+    #1f03f6, 
+    #cb479b
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorCycle 5s linear infinite;
+}
+
+@keyframes colorCycle {
+  to {
+    background-position: 300% center;
+  }
+}
+
+.heroSubtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  color: #475569;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryBtn {
+  background: linear-gradient(15deg, #cb479b, #5f06e2, #1f03f6);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(95, 6, 226, 0.2);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(95, 6, 226, 0.3);
+}
+
+.secondaryBtn {
+  background: rgba(255, 255, 255, 0.5);
+  color: #1e293b;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-3px);
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  z-index: 10;
+}
+
+.mouse {
+  width: 26px;
+  height: 40px;
+  border: 2px solid #94a3b8;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: #5f06e2;
+  border-radius: 2px;
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .glassCard {
+    padding: 2.5rem 1.5rem;
+    border-radius: 30px;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+}

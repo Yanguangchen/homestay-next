@@ -3,11 +3,9 @@
 function Banner() {
     const styles = {
       container: {
-        fontFamily: "Arial, sans-serif",
-        maxWidth: "800px",
-        margin: "0 auto",
-        padding: "20px",
-        marginBottom: "10%",
+        fontFamily: "Montserrat, sans-serif",
+        width: "100%",
+        padding: "20px 0",
       },
       header: {
         fontSize: "24px",
@@ -21,7 +19,7 @@ function Banner() {
       },
       date: {
         fontSize: "14px",
-        color: "white",
+        color: "#666",
         marginBottom: "20px",
       },
       section: {
@@ -47,25 +45,31 @@ function Banner() {
       },
       td: {
         padding: "8px",
-        color: "white",
+        color: "#333",
   
       },
       infoBox: {
-        backgroundColor: "#212121",
-        padding: "15px",
-        color: "white",
+        background: "rgba(255, 255, 255, 0.4)",
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+        border: "1px solid rgba(255, 255, 255, 0.3)",
+        borderRadius: "15px",
+        padding: "25px",
+        marginBottom: "30px",
+        boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.15)",
+        color: "#333",
       },
       infoHeader: {
         fontSize: "18px",
         fontWeight: "bold",
         marginBottom:"10px",
-        color: "white",
+        color: "#333",
       },
     };
   
     return (
-      <div>
-        <div style={styles.infoBox}>
+      <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", width: "80%", margin: "0 auto" }}>
+        <div className="info-box" style={{ flex: "1 1 300px", minWidth: "280px" }}>
           <h2 style={styles.infoHeader}>
             Important Information Before Your Arrival
           </h2>
@@ -79,9 +83,9 @@ function Banner() {
             </li>
           </ul>
         </div>
-        <div style={styles.infoBox}>
+        <div className="info-box" style={{ flex: "1 1 300px", minWidth: "280px" }}>
           <h2 style={styles.infoHeader}>Our Interaction Program</h2>
-          <p>
+          <p style={{ color: "#4b5563", marginBottom: "10px" }}>
             Upon requesting an exchange program that involves interaction with
             local people:
           </p>

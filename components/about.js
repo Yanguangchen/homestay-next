@@ -1,254 +1,98 @@
 "use client";
-import React, { useState } from "react";
-import styles from "./Accordion.module.css"; // <-- Import the CSS module
-
-const AccordionItem = ({ title, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className={styles.accordionContainer}>
-      <div className={styles.accordionItem}>
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={styles.accordionButton}
-          aria-expanded={isOpen}
-        >
-          <span className={styles.accordionTitle}>{title}</span>
-          {/* Apply `.open` class conditionally for rotation or styling */}
-          <span
-            className={`${styles.accordionIcon} ${isOpen ? styles.open : ""}`}
-          >
-            +
-          </span>
-        </button>
-
-        {/* Collapsible content */}
-        <div
-          className={`${styles.accordionContent} ${isOpen ? styles.open : ""}`}
-        >
-          <div className={styles.accordionInner}>{children}</div>
-        </div>
-      </div>
-    </div>
-  );
-};
+import React from "react";
+import styles from "./Accordion.module.css";
+import AccordionItem from "./AccordionItem";
 
 const EmploymentAgencySection = () => {
   return (
     <div className={styles.employmentAgencySection}>
-      <div>
-        <AccordionItem title="About the exchange program">
-          <h4 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>
-            Our experience:
+      <AccordionItem title="About the exchange program">
+        <h4 style={{ fontWeight: "700", marginBottom: "1rem", color: "#1e293b" }}>
+          Students are to engage and seek local education institutions first,
+          before our services and the exchange program commence.
+        </h4>
+        <p>
+          Participating in a program that emphasizes interaction with local
+          people offers numerous benefits, such as exposure to everyday life
+          in a different location.
+        </p>
+        <p>
+          It provides opportunities to experience local culture and traditions, 
+          engage in cultural diplomacy, build friendships, develop intercultural
+          competence, and practice foreign languages.
+        </p>
+        <p>
+          Additionally, you can gain valuable local insights and advice.
+          This program is designed to enhance participants' language skills
+          and deepen their understanding of the native culture and
+          traditions.
+        </p>
+        <p style={{ fontStyle: "italic", fontSize: "0.9rem" }}>
+          Note: Rules and restrictions, such as curfews or limitations on facility 
+          usage, may apply. Accommodations may offer different levels of comfort 
+          compared to hotels.
+        </p>
+      </AccordionItem>
+
+      <AccordionItem title="School Visit">
+        <p>
+          This program fosters a deeper understanding of each other's
+          schools and countries, promoting friendships and introducing the
+          diverse disciplines, cultures, traditions, and ways of life at
+          each institution.
+        </p>
+        <div style={{ marginTop: "1.5rem", padding: "1rem", background: "rgba(95, 6, 226, 0.05)", borderRadius: "10px" }}>
+          <h4 style={{ fontWeight: "700", marginBottom: "0.5rem", color: "#5f06e2" }}>
+            Request Processing Time
           </h4>
-          <ul
-            style={{
-              listStyleType: "disc",
-              paddingLeft: "1.25rem",
-              marginBottom: "1rem",
-            }}
-          >
-            <h4 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>
-              Students are to engage and seek local education instutions first,
-              before our services and the exchange program commence
-            </h4>
-            <p>
-              Participating in a program that emphasizes interaction with local
-              people offers numerous benefits, such as exposure to everyday life
-              in a different location. <br></br> <br></br>It provides
-              opportunities to experience local culture and traditions, engage
-              in cultural diplomacy, build friendships, develop intercultural
-              competence, and practice foreign languages. <br></br> <br></br>
-              Additionally, you can gain valuable local insights and advice.
-              This program is designed to enhance participants' language skills
-              and deepen their understanding of the native culture and
-              traditions. Please note that there may be specific rules and
-              restrictions, such as curfews or limitations on facility usage.{" "}
-              <br></br>
-              <br></br>Unlike hotels or motels, the accommodations provided in
-              this program may not offer the same level of comfort, amenities,
-              or privacy.<br></br>
-              <br></br> These are important considerations when choosing an
-              exchange program that involves direct interaction with the local
-              community.<br></br>
-              <br></br> Participants will stay at locations such as host
-              families, educational institutions, or tuition centers that are
-              registered with the Ministry of Education. Upon requesting an
-              exchange program that involves interaction with local people, we
-              will discuss your specific interests, whether cultural,
-              linguistic, or otherwise, to tailor the experience to your
-              preferences.
-            </p>
-          </ul>
-        </AccordionItem>
+          <p style={{ margin: 0 }}>
+            Please note that requesting a school exchange program requires a waiting period of
+            six months or more. This allows time for arranging the program and
+            obtaining necessary approvals.
+          </p>
+        </div>
+      </AccordionItem>
 
-        <AccordionItem title="School Visit">
-          <ul
-            style={{
-              listStyleType: "disc",
-              paddingLeft: "1.25rem",
-              marginBottom: "1rem",
-            }}
-          >
-            <p>
-              This program fosters a deeper understanding of each other's
-              schools and countries, promoting friendships and introducing the
-              diverse disciplines, cultures, traditions, and ways of life at
-              each institution. <br></br> <br></br>{" "}
-              <b>Request Processing time</b> <br></br> Please note that
-              requesting a school exchange program requires a waiting period of
-              six months or more.
-              <br></br>
-              <br></br>
-              This is necessary to allow time for arranging the program and
-              obtaining various approvals from the respective education
-              departments. Approval is subject to the availability and timing
-              within the local school schedule. The names of schools that have
-              previously participated in exchange programs or local interactions
-              will also be considered.
-            </p>
-          </ul>
-        </AccordionItem>
-
-        <AccordionItem title="School List">
-          <h4 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>
-            2015 & 2016
-          </h4>
-          <ul
-            style={{
-              listStyleType: "disc",
-              paddingLeft: "1.25rem",
-              marginBottom: "1rem",
-            }}
-          >
-            <li>Kawaharara Specialist School</li>
-            <li>Toyonaka High School</li>
-            <li>Kasugai Komaki</li>
-          </ul>
-
-          <h4 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>2017</h4>
-          <ul
-            style={{
-              listStyleType: "disc",
-              paddingLeft: "1.25rem",
-              marginBottom: "1rem",
-            }}
-          >
-            <li>Kumamoto High School</li>
-            <li>Niigata Niitsu High School</li>
-            <li>Kameda College of Health Sciences</li>
-            <li>Toso Chiku High School</li>
-            <li>Kaita High School</li>
-            <li>Niigata Konan High School</li>
-            <li>Coast Guard Group</li>
-            <li>Hirosaki High School</li>
-            <li>Kagamino High School</li>
-            <li>Keikei High School</li>
-            <li>Niigata Seiryo High School</li>
-            <li>Yokohama Sogakkan Gakuen Koko (Sekolah Indonesia)</li>
-            <li>Tomeikan High School</li>
-            <li>Matsue High School</li>
-            <li>Kagoshima Iryo</li>
-            <li>Kamogyosei Koko</li>
-          </ul>
-
-          <h4 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>2018</h4>
-          <ul
-            style={{
-              listStyleType: "disc",
-              paddingLeft: "1.25rem",
-              marginBottom: "1rem",
-            }}
-          >
-            <li>IAI High School</li>
-            <li>Otemae High School</li>
-            <li>Shokei Junior High School</li>
-            <li>Kameda Medical College</li>
-            <li>Naha Kokusai High School</li>
-            <li>Saiyko High School</li>
-            <li>Toyonaka High School</li>
-          </ul>
-
-          <h4 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>2019</h4>
-          <ul
-            style={{
-              listStyleType: "disc",
-              paddingLeft: "1.25rem",
-              marginBottom: "1rem",
-            }}
-          >
-            <li>Otemae High School</li>
-            <li>Hitachi Daiichi High School</li>
-            <li>Naha Kokusai High School</li>
-            <li>Junshin High School</li>
-            <li>Kameda Medical College</li>
-            <li>Katsuyama High School</li>
-            <li>Setano Town High School</li>
-            <li>Wayo Kudan Middle School</li>
-            <li>Ehimekenritsu Matsuyama Nishi Junior High School</li>
-            <li>Okayama High School</li>
-            <li>Hirosaki High School</li>
-            <li>Niigata Maki High School</li>
-            <li>Aguichi High School</li>
-            <li>Manno Cho High School</li>
-            <li>Kagamino High School</li>
-            <li>Seki High School</li>
-            <li>Nishio High School</li>
-            <li>Sakuragaoka High School</li>
-            <li>Tokai High School</li>
-            <li>Munakato High School</li>
-            <li>Gunma High School</li>
-            <li>Okidozen High School</li>
-            <li>Sendai Nika High School</li>
-            <li>Niigata Seiryo High School</li>
-            <li>Murakami High School</li>
-            <li>Wakasa High School</li>
-            <li>Kamogyosei High School</li>
-          </ul>
-
-          <h4 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>2023</h4>
-          <ul
-            style={{
-              listStyleType: "disc",
-              paddingLeft: "1.25rem",
-              marginBottom: "1rem",
-            }}
-          >
-            <li>Toin Gakuen High School</li>
-            <li>Kakogawa High School</li>
-            <li>Hirosaki High School</li>
-            <li>Takefu High School</li>
-            <li>Fukuoka Ken Jinzai Ikusei</li>
-            <li>Miyazaki Ken High School</li>
-            <li>Toyonaka High School</li>
-            <li>Eishin High School</li>
-            <li>Fukui Koushi High School</li>
-          </ul>
-
-          <h4 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>2024</h4>
-          <ul
-            style={{
-              listStyleType: "disc",
-              paddingLeft: "1.25rem",
-              marginBottom: "1rem",
-            }}
-          >
-            <li>Toin Gakuen High School</li>
-            <li>Suwaseiryo High School</li>
-            <li>Jishukan High School</li>
-            <li>Hirosaki High School</li>
-            <li>Matsuyama High School</li>
-            <li>Takefu High School</li>
-            <li>Miyazaki Ken High School</li>
-            <li>Noda Gakuen High School</li>
-            <li>Saitama Heisei Junior High School</li>
-            <li>Takefu Higashi High School</li>
-            <li>Mito Daiichi Junior High School</li>
-            <li>Haguro High School</li>
-            <li>Kogakuin University High School</li>
-          </ul>
-        </AccordionItem>
-      </div>
+      <AccordionItem title="School List">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "2rem" }}>
+          <div>
+            <h4 style={{ fontWeight: "700", color: "#1e293b" }}>2024</h4>
+            <ul style={{ listStyleType: "none", padding: 0 }}>
+              <li>Toin Gakuen High School</li>
+              <li>Suwaseiryo High School</li>
+              <li>Jishukan High School</li>
+              <li>Hirosaki High School</li>
+              <li>Matsuyama High School</li>
+              <li>Takefu High School</li>
+              <li>Miyazaki Ken High School</li>
+              <li>Noda Gakuen High School</li>
+              <li>Saitama Heisei Junior High School</li>
+              <li>Takefu Higashi High School</li>
+              <li>Mito Daiichi Junior High School</li>
+              <li>Haguro High School</li>
+              <li>Kogakuin University High School</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style={{ fontWeight: "700", color: "#1e293b" }}>2023</h4>
+            <ul style={{ listStyleType: "none", padding: 0 }}>
+              <li>Toin Gakuen High School</li>
+              <li>Kakogawa High School</li>
+              <li>Hirosaki High School</li>
+              <li>Takefu High School</li>
+              <li>Fukuoka Ken Jinzai Ikusei</li>
+              <li>Miyazaki Ken High School</li>
+              <li>Toyonaka High School</li>
+              <li>Eishin High School</li>
+              <li>Fukui Koushi High School</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style={{ fontWeight: "700", color: "#1e293b" }}>Archive</h4>
+            <p style={{ fontSize: "0.9rem" }}>Over 50+ schools since 2015, including Kumamoto High School, Otemae High School, and many more.</p>
+          </div>
+        </div>
+      </AccordionItem>
     </div>
   );
 };

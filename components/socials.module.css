@@ -1,43 +1,149 @@
-.flexContainer {
-  margin-top: 10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center !important;
-  align-items: center;
-}
-
-/* Not currently used, but kept for reference if needed. */
-.flexContainer1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center !important;
-  align-items: center;
+.footerContainer {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 5rem 2rem 3rem 2rem;
+  margin-top: 5rem;
   width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.03);
 }
 
-/* Also not currently used in the code, but preserved. */
-.buttonStyle {
-  margin-top: 5%;
-  font-size: 100%;
-  padding: 1%;
-  font-family: Montserrat, sans-serif;
-  background-color: #051d40;
-  color: #fff;
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 4rem;
 }
 
-/* Also not used, but preserved for potential image styling. */
-.photoStyle {
-  margin-top: 5%;
-  width: 100%;
+.footerLogo {
+  font-family: 'League Spartan', 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  text-transform: lowercase;
+  letter-spacing: -1px;
 }
 
-/* If you need a hidden variant: .photoStyleHidden */
-.photoStyleHidden {
-  display: none;
+.footerDesc {
+  font-family: 'Montserrat', sans-serif;
+  color: #475569;
+  line-height: 1.7;
+  font-size: 1rem;
+  max-width: 350px;
+  margin-bottom: 1.5rem;
 }
 
-/* The review widget container */
-.reviewWidget {
-  width: 80%;
+.wwBadge {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
+.wwBadge:hover {
+  opacity: 1;
+}
+
+.wwLogo {
+  height: 40px;
+  width: auto;
+}
+
+.footerHeader {
+  font-family: 'League Spartan', 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 0.8rem;
+}
+
+.footerLinks a {
+  text-decoration: none;
+  color: #64748b;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.footerLinks a:hover {
+  color: #5f06e2;
+  padding-left: 8px;
+}
+
+.footerContact {
+  font-family: 'Montserrat', sans-serif;
+  color: #475569;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.footerContact strong {
+  color: #334155;
+  font-weight: 600;
+}
+
+.footerBottom {
+  max-width: 1200px;
+  margin: 4rem auto 0 auto;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footerBottom p {
+  margin: 0.5rem 0;
+  color: #64748b;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.techStack {
+  font-size: 0.85rem !important;
+  color: #94a3b8 !important;
+}
+
+.copyright {
+  font-size: 0.8rem !important;
+  margin-top: 1.5rem !important;
+  opacity: 0.6;
+}
+
+@media (max-width: 1024px) {
+  .footerContent {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .footerDesc {
+    margin: 0 auto 1.5rem auto;
+  }
+  
+  .footerLinks a:hover {
+    padding-left: 0;
+    transform: scale(1.05);
+    display: inline-block;
+  }
+}

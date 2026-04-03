@@ -3,138 +3,123 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Raleway", serif;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
 }
 
 /* Outer wrapper for each accordion item */
 .accordionItem {
-  /* Subtle box-shadow for card effect */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
   overflow: hidden;
-  background: #fff; /* Card background */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 2rem; /* Adjust spacing as needed */
-  font-family: "Raleway", serif;
+  margin-top: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+  transition: all 0.3s ease;
 }
 
-/* Top button (accordion header) with gradient background */
+.accordionItem:hover {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+/* Top button (accordion header) */
 .accordionButton {
   display: flex;
-  justify-content: space-between; /* Space between title and icon */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1rem 2rem; /* Adjust padding for better spacing */
-  text-align: left; /* Align text to the left */
-  transition: background 0.3s, transform 0.3s;
-  font-size: 1rem;
-  font-weight: 600;
-  background: linear-gradient(15deg, #000000, #737070); /* Darker gradient on hover */
-  color: #fff;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: transparent;
+  color: #1e293b;
   border: none;
   cursor: pointer;
-  font-family: "Montserrat", serif;
-
-  /* Rounded top corners */
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  font-family: 'League Spartan', 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Hover effect for accordion button */
 .accordionButton:hover {
-  background: linear-gradient(-15deg, #000000, #737070); /* Darker gradient on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Accordion title text */
 .accordionTitle {
-  font-weight: 600;
-  font-size: 1.125rem; /* ~18px, adjust as needed */
-  font-family: "Montserrat", serif;
+  font-weight: 700;
 }
 
-/* The "+" icon that rotates on open */
+/* The "+" icon */
 .accordionIcon {
   margin-left: 0.5rem;
-  transition: transform 0.3s;
-  font-size: 1.5rem; /* Increase icon size for better visibility */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1.5rem;
+  color: #5f06e2;
 }
 
-/* Rotate icon 45deg when open (used in combination with .open class) */
 .accordionIcon.open {
   transform: rotate(45deg);
+  color: #cb479b;
 }
 
-/* Collapsible content container
-   - Animates via max-height
-   - Overflow hidden for the collapse effect
-*/
+/* Collapsible content container */
 .accordionContent {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
-  background: #fff;
+  background: transparent;
 }
 
-/* When open, use a large max-height to reveal content */
 .accordionContent.open {
-  max-height: 1000px; /* or any large enough value to fit your content */
+  max-height: 2000px;
 }
 
 /* Inner area where the actual content sits */
 .accordionInner {
-  padding: 1.5rem;
-  color: #333; /* Dark text for contrast on white background */
-  font-family: "Montserrat", serif;
+  padding: 0 2rem 2rem 2rem;
+  color: #475569;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
 }
 
-/* Additional styling for your EmploymentAgencySection container */
+.accordionInner p {
+  margin-bottom: 1rem;
+}
+
+.accordionInner ul {
+  margin-top: 10px;
+}
+
+.accordionInner li {
+  margin-bottom: 8px;
+}
+
+/* Additional styling for container */
 .employmentAgencySection {
-  max-width: 64rem;
-  margin: 0 auto;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  /* Optional: apply a background or remain transparent */
-}
-
-/* Section title styling */
-.sectionTitle {
-  font-size: 1.875rem; /* ~30px */
-  text-align: center;
-  margin-bottom: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto 5% auto;
+  padding: 0 20px;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .accordionButton {
-    padding: 0.75rem 1.5rem; /* Adjust padding for smaller screens */
-    font-size: 0.95rem;
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
   }
 
   .accordionInner {
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 430px) {
-  .accordionButton {
-    padding: 0.5rem 1rem; /* Further adjust padding */
-    font-size: 0.9rem;
-  }
-
-  .accordionInner {
-    padding: 0.75rem;
-    font-size: 0.85rem;
-  }
-
-  .accordionIcon {
-    font-size: 1.25rem; /* Slightly smaller icon */
+    padding: 0 1.5rem 1.5rem 1.5rem;
   }
 }

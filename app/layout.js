@@ -2,8 +2,6 @@ import "../styles/body.css";
 import "../styles/grid.css";
 import "../styles/navbar.css";
 import Navbar from "../components/navbar";
-import Link from "next/link";
-
 import Script from "next/script";
 
 export const metadata = {
@@ -16,111 +14,75 @@ export default function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "sg-learninghub",
-    url: "https://sg-learninghub.com",
-    logo: "https://singapore-exchange.github.io/homestay/static/media/topBanner.6b6e94d1c7c882f6d292.jpg",
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "homestay@singnet.com",
-    },
-    address: {
+    "name": "sg-learninghub",
+    "url": "https://sg-learninghub.com",
+    "logo": "https://sg-learninghub.com/transparent.png",
+    "image": "https://sg-learninghub.com/transparent.png",
+    "description": "For over 20 years, sglearninghub has provided immersive cultural exchange and study tour programs in Singapore, including homestays, internships, and school visits.",
+    "foundingDate": "2006",
+    "priceRange": "$$",
+    "telephone": "+65 63421527",
+    "email": "homestay@singnet.com",
+    "address": {
       "@type": "PostalAddress",
-      streetAddress: "65 Airport Blvd., #03-37 Terminal 3, Singapore 819663",
-      addressLocality: "Singapore",
-      postalCode: "819663",
-      addressCountry: "SG",
+      "streetAddress": "65 Airport Blvd., #03-37 Terminal 3, Singapore 819663",
+      "addressLocality": "Singapore",
+      "postalCode": "819663",
+      "addressCountry": "SG"
     },
-    service: [
-      {
-        "@type": "Service",
-        name: "Student exchange program",
-      },
-      {
-        "@type": "Service",
-        name: "Internships",
-      },
-      {
-        "@type": "Service",
-        name: "Technical Visits",
-      },
-      {
-        "@type": "Service",
-        name: "Attachments",
-      },
-      {
-        "@type": "Service",
-        name: "Student Services",
-      },
-    ],
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 1.355580,
+      "longitude": 103.983621
+    },
+    "areaServed": "Singapore",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Cultural and Educational Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Student Exchange Programs"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Educational Study Tours"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Homestay Services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Internships & Technical Visits"
+          }
+        }
+      ]
+    }
   };
 
   return (
     <html lang="en">
       <head>
-        {/* Basic Meta */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          rel="icon"
-          href="/apple-icon.png"
-          sizes="any"
-        />
+        <link rel="icon" href="/apple-icon.png" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
-
-        {/* Stylesheets */}
-        <link rel="stylesheet" href="/body.css" />
-        <link rel="stylesheet" href="/navbar.css" />
-        <link rel="stylesheet" href="/grid.css" />
-        <link rel="stylesheet" href="/listing.css" />
-        <link rel="stylesheet" href="/footer.css" />
-
-        {/* Open Graph & Twitter */}
-        <meta
-          property="og:image"
-          content="https://sg-learninghub.com/transparent.png"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta
-          property="og:image:alt"
-          content="Homestay Exchange in Singapore"
-        />
-        <meta
-          name="twitter:image"
-          content="https://sg-learninghub.com/transparent.png"
-        />
-        <meta
-          name="twitter:image:alt"
-          content="Homestay Exchange in Singapore"
-        />
-
-        {/* Author and Robots */}
-        <meta name="author" content="Web Wizards" />
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
-
-        {/* Description and OG Details */}
-        <meta
-          name="description"
-          content="Explore cultural exchange programs in Singapore with sg-learninghub. Offering personalized homestay experiences and school exchange programs that foster cultural understanding and global friendships."
-        />
-        <meta property="og:title" content="Singapore Exchange" />
-        <meta
-          property="og:description"
-          content="Experience Singapore like a local with sg-learninghub. Our programs offer students and tourists the opportunity to immerse in the culture, traditions, and daily life of Singapore through tailored homestay experiences and educational exchange programs."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="singapore exchange" />
-
-        {/* Apple Mobile Web App */}
-        <meta name="apple-mobile-web-app-title" content="-learninghub" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-touch-fullscreen" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
         {/* Fonts */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
           rel="stylesheet"
         />
         <link
@@ -128,85 +90,37 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
 
-        {/* Canonical & Preconnect */}
-        <link rel="canonical" href="https://sg-learninghub.com" />
-        <link rel="preconnect" href="https://www.google.com" />
-        <link rel="dns-prefetch" href="https://www.google.com" />
-
-        {/* External Scripts */}
-        <Script
-          src="https://accounts.google.com/gsi/client"
-          strategy="afterInteractive"
-        />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-HHPBXLLKPQ"
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-script" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-HHPBXLLKPQ');
-          `}
-        </Script>
-
-        <script
-          async
-          type="module"
-          src="https://unpkg.com/@splinetool/viewer@1.9.59/build/spline-viewer.js"
-        ></script>
-
-        {/* Structured Data (JSON‑LD) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-
-        <title>
-          sg-learninghub - Cultural and School Exchange Programs in Singapore
-        </title>
-        <script
-          async
-          src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"
-        ></script>
-        <script
-          async
-          src="https://files.bpcontent.cloud/2025/04/09/07/20250409072725-7JS2HUV7.js"
-        ></script>
       </head>
 
-      <body>
-        <script
+      <body suppressHydrationWarning>
+        <Script
           src="https://static.elfsight.com/platform/platform.js"
-          async
-        ></script>
+          strategy="lazyOnload"
+        />
+        <Script
+          src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="https://files.bpcontent.cloud/2025/04/09/07/20250409072725-7JS2HUV7.js"
+          strategy="lazyOnload"
+        />
+        
         <div
-          class="elfsight-app-c6a27cf6-6681-4c2f-9ddf-12adebc1857e"
+          className="elfsight-app-c6a27cf6-6681-4c2f-9ddf-12adebc1857e"
           data-elfsight-app-lazy
         ></div>
-        <Link href="/admin">
-          <button
-            style={{
-              position: "fixed",
-              top: "10px",
-              right: "10px",
-              padding: "10px 15px",
-              background: "linear-gradient(15deg, #cb479b, #5f06e2, #1f03f6);",
-              color: "white",
-              border: "none",
-              borderRadius: "4px",
-              cursor: "pointer",
-              fontFamily: "Montserrat, sans-serif",
-            }}
-          >
-            Sign in (Admin)
-          </button>
-        </Link>
+        
         <Navbar />
 
-        <div id="root"></div>
-        {children}
+        <main style={{ paddingTop: "100px" }}>
+          <div id="root"></div>
+          {children}
+        </main>
       </body>
     </html>
   );

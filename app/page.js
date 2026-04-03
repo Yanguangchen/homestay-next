@@ -1,6 +1,5 @@
 import MainPage from "../components/homepage"; // Import the HomePage component
 import "../styles/footer.css";
-import Link from "next/link";
 
 export const metadata = {
   title: "sg-learninghub - Cultural and School Exchange Programs in Singapore",
@@ -20,34 +19,8 @@ export default function HomePage() {
         src="https://files.bpcontent.cloud/2025/04/09/07/20250409072725-7JS2HUV7.js"
       ></script>
 
-      {/* Use the imported HomePage component */}
+      {/* Use the imported HomePage component (which includes the footer in socials.js) */}
       <MainPage />
-      <footer>
-        <div className="footerStyle">
-          <div className="footerWrapper">
-            <div className="footerContent">{/* Add footer content here */}</div>
-          </div>
-        </div>
-        <div className="bottomSection">
-          <a href="https://webwizardsg.com/">
-            <div className="wwContainer">
-              <img
-                className="wwLogo"
-                src="/transparent.png"
-                loading="lazy"
-                alt="Logo to webwizardsg.com"
-              />
-            </div>
-          </a>
-          <p className="footerContentPStyle">
-            Powered using React.Js & Next.Js, hosted on Vercel and secured by
-            Cloudflare CDN
-          </p>
-          <p className="footerContentPStyle">
-            Developed by Chen Yanguang from Web Wizards
-          </p>
-        </div>
-      </footer>
     </main>
   );
 }

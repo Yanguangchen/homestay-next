@@ -1,157 +1,104 @@
-/* --- General Typography & Defaults --- */
-/* 
-   Shared styles for textAlignLeft2 & textAlignLeft3
-   (both have the same rules, so they're combined here)
-*/
-.textAlignLeft2,
-.textAlignLeft3 {
-  text-align: left;
-  font-size: 2em;
-  line-height: 1.3em;
-  font-family: "Montserrat", serif;
+.totalContainerClass {
+  width: 90%;
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 2rem 0;
 }
 
-/* Flex wrapper for the "cards" */
 .flexWrapper {
   display: flex;
   justify-content: center;
-  padding-bottom: 1em;
-  font-family: "Raleway", serif;
-  color: black;
-  font-weight: 350;
-  background: #fff; /* White background for each section */
+  padding-bottom: 2rem;
+  background: transparent;
 }
 
-/* 
-  The containers that hold each "card" set:
-  - .gridContainer and .gridContainer2 
-  - styled as modern cards with a box shadow & hover effect
-*/
 .gridContainer,
 .gridContainer2 {
   display: grid;
-  grid-gap: 0;
   width: 100%;
-  text-align: left;
-  font-family: "Raleway", serif;
-
-  /* Card-like styling */
-  background-color: #fff; /* Card background */
-  border-radius: 0.75rem; /* Slightly rounded corners */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  /* Margin to separate multiple cards vertically */
-  margin: 1em 0;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 40px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  margin: 1.5rem 0;
 }
 
-/* Hover effect: slightly "lift" the card & intensify the shadow */
 .gridContainer:hover,
 .gridContainer2:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 15px 45px rgba(31, 38, 135, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Container for the entire banner section */
-.totalContainerClass {
-  margin-top: 7em;
-  /* Optional: add padding for spacing around all cards */
-  padding: 2em 0;
-}
-
-/* 
-  Define columns for each "card":
-  - The first card has 40% for video, 60% for text
-  - The second card reverses it
-*/
 .gridContainer {
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 1fr 1.2fr;
 }
 
 .gridContainer2 {
-  margin-top: 1em;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 1.2fr 1fr;
 }
 
-/* 
-  container1 = video container
-  container2 = text container
-*/
 .container1,
 .container2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Add some padding inside each half of the card */
-  padding: 1em;
+  padding: 3rem;
 }
 
-/* Additional padding adjustments */
-.textAlignLeft2 {
-  padding: 1em;
-}
-
-.textAlignLeft3 {
-  padding: 1em 1em 1em 3em;
-}
-
-/* --- Video styling --- */
-.videoStyle {
-  width: 70%;
-  border-radius: 0.75rem; /* Make video corners match card rounding */
-}
-
-/* More pronounced rounding for the video (if you want 30px corners) */
-.horizontalVideo {
-  border-radius: 30px;
-}
-
-/* 
-  If there's additional text styling for the content text 
-  beyond the left-aligned classes, define it here
-*/
 .textContent {
-  /* Adjust or leave empty if you just want the default styling */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #475569;
 }
 
-/* --- Responsive Rules --- */
-@media screen and (max-width: 1029px) {
-  .textContent {
-    font-size: 1.4em !important;
+.textContent b {
+  font-family: 'League Spartan', 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  color: #1e293b;
+  display: block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.horizontalVideo {
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .gridContainer,
+  .gridContainer2 {
+    grid-template-columns: 1fr;
   }
-  .horizontalVideo {
-    width: 90% !important;
-    height: auto;
+  
+  .gridContainer2 .container2 {
+    order: 2;
   }
-  .totalContainerClass {
-    margin-top: 0 !important;
+  
+  .gridContainer2 .container1 {
+    order: 1;
+  }
+  
+  .container1,
+  .container2 {
+    padding: 2rem;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .textContent {
-    font-size: 1.3em !important;
+@media (max-width: 768px) {
+  .textContent b {
+    font-size: 1.5rem;
   }
-}
-
-@media screen and (max-width: 687px) {
   .textContent {
-    font-size: 1em !important;
-  }
-  .horizontalVideo {
-    width: 90% !important;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .textContent {
-    font-size: 0.8em !important;
-  }
-}
-
-@media screen and (max-width: 390px) {
-  .textContent {
-    font-size: 0.7em !important;
+    font-size: 1rem;
   }
 }

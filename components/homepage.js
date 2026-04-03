@@ -8,10 +8,8 @@ const Listings = lazy(() => import("./listings"));
 const Contactparent = lazy(() => import("./contactParent"));
 const Socials = lazy(() => import("./socials"));
 const AboutSection = lazy(() => import("./about"));
-const Quote = lazy(() => import("./quote"));
 const HorizontalBanner = lazy(() => import("./horizontalbanner"));
 const FeatureCards = lazy(() => import("./FeatureCards"));
-const GridContainer = lazy(() => import("./gridContainer"));
 const Banner = lazy(() => import("./banner"));
 const Maps = lazy(() => import("./maps"));
 const TrafficWidget = lazy(() => import("./TrafficWidget"));
@@ -24,9 +22,17 @@ function Homepage() {
       <Banner />
       <SpliceElement />
 
-      <Suspense fallback={<Loading />}>
-        <Quote />
-      </Suspense>
+      <div className="motto-container">
+        <h2 className="motto-text">Learning through experience</h2>
+      </div>
+
+      <div className="vision-container">
+        <div className="vision-card">
+          <h3 className="vision-header">Our Vision</h3>
+          <p className="vision-text">Transforming through cultural exchange</p>
+          <p className="vision-text">To sustain culture in the era of changes and moderation</p>
+        </div>
+      </div>
 
       <Suspense fallback={<Loading />}>
         <FeatureCards />
@@ -41,15 +47,13 @@ function Homepage() {
       </Suspense>
 
       <Suspense fallback={<Loading />}>
-        <GridContainer />
-      </Suspense>
-
-      <Suspense fallback={<Loading />}>
         <TrafficWidget />
       </Suspense>
 
       <Suspense fallback={<Loading />}>
-        <ElfsightWidget widgetId="b81e4774-e612-450a-9de1-cf7b07881910" />
+        <div style={{ width: "80%", margin: "0 auto" }}>
+          <ElfsightWidget widgetId="b81e4774-e612-450a-9de1-cf7b07881910" />
+        </div>
       </Suspense>
 
       <Suspense fallback={<Loading />}>
