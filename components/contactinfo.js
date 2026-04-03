@@ -1,7 +1,12 @@
 "use client";
 import React from "react";
 import styles from "./contactInfo.module.css";
-import { ElfsightWidget } from "react-elfsight-widget";
+import dynamic from "next/dynamic";
+
+const ElfsightWidget = dynamic(
+  () => import("react-elfsight-widget").then((mod) => mod.ElfsightWidget),
+  { ssr: false }
+);
 
 function ContactInfo() {
   return (
