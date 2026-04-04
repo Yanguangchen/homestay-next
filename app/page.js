@@ -3,6 +3,9 @@ import "../styles/footer.css";
 
 export const metadata = {
   title: "sg-learninghub - Cultural and School Exchange Programs in Singapore",
+  alternates: {
+    canonical: "/",
+  },
   description:
     "Explore cultural exchange programs in Singapore with sg-learninghub. Offering personalized homestay experiences and school exchange programs that foster cultural understanding and global friendships.",
 };

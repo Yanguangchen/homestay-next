@@ -4,6 +4,9 @@ import Socials from "../../components/socials";
 
 export const metadata = {
   title: "Study Tours - sglearninghub",
+  alternates: {
+    canonical: "/StudyTours",
+  },
   description: "Explore our curated study tours and cultural exchange programs in Singapore.",
 };
 

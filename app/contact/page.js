@@ -3,6 +3,9 @@ import Socials from "../../components/socials";
 
 export const metadata = {
   title: "Contact Us - sglearninghub",
+  alternates: {
+    canonical: "/contact",
+  },
   description:
     "Contact sglearninghub for inquiries about cultural exchange programs, internships, and student services in Singapore. Reach out to us for personalized assistance.",
 };

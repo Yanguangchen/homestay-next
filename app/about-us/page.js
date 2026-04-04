@@ -2,6 +2,9 @@ import Socials from "../../components/socials";
 
 export const metadata = {
   title: "About Us - sglearninghub",
+  alternates: {
+    canonical: "/about-us",
+  },
   description: "Learn about sglearninghub's 20-year legacy of providing exceptional cultural and educational exchange programs in Singapore.",
 };
 

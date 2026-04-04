@@ -3,6 +3,9 @@ import Socials from "../../components/socials";
 
 export const metadata = {
   title: "FAQ - sglearninghub",
+  alternates: {
+    canonical: "/faq",
+  },
   description: "Frequently asked questions about our homestay and study tour programs in Singapore.",
 };
 

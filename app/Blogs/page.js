@@ -3,6 +3,9 @@ import Socials from "../../components/socials";
 
 export const metadata = {
   title: "Blogs - sglearninghub",
+  alternates: {
+    canonical: "/Blogs",
+  },
   description: "Stay updated with the latest news and articles about cultural exchange and study tours in Singapore.",
 };
 
