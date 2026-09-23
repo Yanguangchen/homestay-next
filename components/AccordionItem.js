@@ -2,23 +2,23 @@
 import React, { useState } from "react";
 import styles from "./Accordion.module.css";
 
-const AccordionItem = ({ title, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const AccordionItem = ({ title, index, defaultOpen = false, children }) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
     <div className={styles.accordionContainer}>
-      <div className={styles.accordionItem}>
+      <div className={`${styles.accordionItem} ${isOpen ? styles.itemOpen : ""}`}>
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={styles.accordionButton}
           aria-expanded={isOpen}
         >
+          {index && <span className={styles.accordionIndex}>{index}</span>}
           <span className={styles.accordionTitle}>{title}</span>
           <span
             className={`${styles.accordionIcon} ${isOpen ? styles.open : ""}`}
-          >
-            +
-          </span>
+            aria-hidden="true"
+          />
         </button>
 
         <div

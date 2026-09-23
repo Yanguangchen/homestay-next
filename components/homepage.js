@@ -1,50 +1,56 @@
 "use client";
 import React, { Suspense, lazy } from "react";
 import dynamic from "next/dynamic";
+import Banner from "./banner";
+import HeroSection from "./splice";
 
 const ElfsightWidget = dynamic(
   () => import("react-elfsight-widget").then((mod) => mod.ElfsightWidget),
   { ssr: false }
 );
 
-// Lazy load components
-const SpliceElement = lazy(() => import("./splice"));
+// Lazy load below-the-fold sections
 const Listings = lazy(() => import("./listings"));
 const Contactparent = lazy(() => import("./contactParent"));
 const Socials = lazy(() => import("./socials"));
-const AboutSection = lazy(() => import("./about"));
+const ProgramsSection = lazy(() => import("./about"));
+const SchoolRoster = lazy(() => import("./schools"));
 const HorizontalBanner = lazy(() => import("./horizontalbanner"));
 const FeatureCards = lazy(() => import("./FeatureCards"));
-const Banner = lazy(() => import("./banner"));
 const Maps = lazy(() => import("./maps"));
 const TrafficWidget = lazy(() => import("./TrafficWidget"));
 
-const Loading = () => <div>Loading...</div>;
+const Loading = () => <div style={{ minHeight: 200 }} aria-busy="true" />;
 
 function Homepage() {
   return (
-    <div className="animate-on-load-wrapper">
+    <div>
+      {/* The two arrival notices stay first on the page by request */}
       <Banner />
-      <SpliceElement />
+      <HeroSection />
 
-      <div className="motto-container">
-        <h2 className="motto-text">Learning through experience</h2>
-      </div>
-
-      <div className="vision-container">
-        <div className="vision-card">
-          <h3 className="vision-header">Our Vision</h3>
-          <p className="vision-text">Transforming through cultural exchange</p>
-          <p className="vision-text">To sustain culture in the era of changes and moderation</p>
+      <section className="section statement">
+        <div className="wrap statement-grid">
+          <h2 className="motto-text" data-reveal>
+            Learning through <em>experience.</em>
+          </h2>
+          <div className="vision-card" data-reveal style={{ "--reveal-delay": "0.15s" }}>
+            <h3 className="vision-header">Our vision</h3>
+            <p className="vision-text">Transforming through cultural exchange.</p>
+            <p className="vision-text">
+              To sustain culture in an era of change and moderation, one host
+              family, one classroom and one friendship at a time.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
 
       <Suspense fallback={<Loading />}>
         <FeatureCards />
       </Suspense>
 
       <Suspense fallback={<Loading />}>
-        <AboutSection />
+        <ProgramsSection />
       </Suspense>
 
       <Suspense fallback={<Loading />}>
@@ -52,32 +58,38 @@ function Homepage() {
       </Suspense>
 
       <Suspense fallback={<Loading />}>
-        <TrafficWidget />
+        <SchoolRoster />
       </Suspense>
 
-      <Suspense fallback={<Loading />}>
-        <div style={{ width: "80%", margin: "0 auto" }}>
+      <section className="section">
+        <div className="wrap">
+          <div data-reveal style={{ marginBottom: 32 }}>
+            <p className="eyebrow">Community</p>
+            <h2 className="section-title">Stories from people who&rsquo;ve stayed.</h2>
+          </div>
           <ElfsightWidget widgetId="b81e4774-e612-450a-9de1-cf7b07881910" />
         </div>
-      </Suspense>
+      </section>
 
       <Suspense fallback={<Loading />}>
-        <Listings />
+        <Listings showNotices={false} />
       </Suspense>
 
       <Suspense fallback={<Loading />}>
         <Contactparent />
       </Suspense>
 
-      
       <Suspense fallback={<Loading />}>
         <Maps />
       </Suspense>
 
       <Suspense fallback={<Loading />}>
-        <Socials />
+        <TrafficWidget />
       </Suspense>
 
+      <Suspense fallback={<Loading />}>
+        <Socials />
+      </Suspense>
     </div>
   );
 }

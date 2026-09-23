@@ -48,7 +48,8 @@ export default function ArticlesList() {
 
   return (
     <div className={`${styles.container} animate-on-load-wrapper`}>
-      <h2 className={styles.header}>Our Latest Posts</h2>
+      <p className="eyebrow">Blog</p>
+      <h2 className={styles.header}>Notes from Singapore.</h2>
       {articles.length > 0 ? (
         articles.map((article) => (
           <div key={article.id} className={styles.articleCard}>

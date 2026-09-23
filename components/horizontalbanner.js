@@ -1,75 +1,58 @@
 import React from "react";
-// Updated import to the CSS module
 import styles from "./horizontalbanner.module.css";
+
+const rows = [
+  {
+    video: "/Assets/HorizontalVideo.mp4",
+    label: "Program request",
+    title: "Visits follow what you study.",
+    body: "To request this program, a candidate must already have studied the field in their home country. We look at the depth of that knowledge first, then take the request to the right centre. So nursing students visit hospitals, and business students go behind the scenes at mega-supermarkets.",
+  },
+  {
+    video: "/Assets/HorizontalVideo2.mp4",
+    label: "Technical visits & internships",
+    title: "See where Singapore works.",
+    body: "We host groups on technical visits to hospitals, kindergartens, senior citizens' homes, mega-supermarkets, cooking schools and other places of interest, so students meet the people doing the job, not just the brochure.",
+  },
+];
 
 function HorizontalBanner() {
   return (
-    <div className={styles.totalContainerClass}>
-      <div className={styles.flexWrapper}>
-        <div className={styles.gridContainer}>
-          <div className={styles.container1}>
-            <video
-              className={`${styles.videoStyle} ${styles.horizontalVideo}`}
-              loading="lazy"
-              autoPlay
-              muted
-              playsInline
-              loop
-            >
-              <source src="./Assets/HorizontalVideo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div className={styles.container2}>
-            <p
-              className={`
-                ${styles.textAlignLeft2} 
-                ${styles.textContent}
-              `}
-            >
-              <b>Program request</b> <br></br>
-              To request for this program, the candidate must have studied in
-              the field in their respective host country We then proceed based
-              on their depth of knowledge, and we would then proceed to process
-              their request to the respective centers for example: only nursing
-              students can have technical visits to hospitls and only business
-              students can have technical visits to mega supermarkerts
-            </p>
-          </div>
+    <section className={`section ${styles.section}`}>
+      <div className="wrap">
+        <div className={styles.head} data-reveal>
+          <p className="eyebrow">Beyond the classroom</p>
+          <h2 className="section-title">Wards, kitchens and kindergartens.</h2>
         </div>
-      </div>
-      <div className={styles.flexWrapper}>
-        <div className={styles.gridContainer2}>
-          <div className={styles.container2}>
-            <p
-              className={`
-                ${styles.textAlignLeft3} 
-                ${styles.textContent}
-              `}
-            >
-              <b>Technical Visit & Internships</b> <br></br>
-              We hosts many groups for technical visits to hospitals,
-              kindergartens, Senior Citizen Homes, mega supermarkerts, cooking
-              schools and other places of interest{" "}
-            </p>
-          </div>
 
-          <div className={styles.container1}>
-            <video
-              className={`${styles.videoStyle} ${styles.horizontalVideo}`}
-              autoPlay
-              muted
-              loading="lazy"
-              playsInline
-              loop
-            >
-              <source src="./Assets/HorizontalVideo2.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
+        {rows.map((row, i) => (
+          <article
+            key={row.label}
+            className={`${styles.row} ${i % 2 ? styles.flip : ""}`}
+            data-reveal
+          >
+            <div className={styles.media}>
+              <video
+                className={styles.video}
+                autoPlay
+                muted
+                playsInline
+                loop
+                preload="metadata"
+              >
+                <source src={row.video} type="video/mp4" />
+              </video>
+              <span className={styles.badge}>0{i + 1}</span>
+            </div>
+            <div className={styles.text}>
+              <p className={styles.label}>{row.label}</p>
+              <h3 className={styles.title}>{row.title}</h3>
+              <p className={styles.body}>{row.body}</p>
+            </div>
+          </article>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
 

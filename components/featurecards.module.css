@@ -1,97 +1,95 @@
-/* --- Container for All Feature Cards --- */
-.feature-cards-container {
-  width: 100%;
-  padding: 4rem 1rem;
-  background: transparent;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5%;
+.section {
+  background: var(--paper);
 }
 
-/* --- Grid Layout for Feature Cards --- */
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  width: 90%;
-  max-width: 1200px;
-}
-
-/* --- Individual Feature Card (Glassmorphic Light) --- */
-.feature-card {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #334155;
-  border-radius: 2rem;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-  padding: 3rem 2rem;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.head {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-bottom: clamp(36px, 5vw, 64px);
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1.5px solid var(--ink);
+}
+
+.card {
+  padding: 28px 28px 8px 0;
+  transition: background 0.45s var(--ease-in);
+}
+
+.card + .card {
+  padding-left: 28px;
+  border-left: 1px solid var(--line);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  height: 100%;
+  margin-bottom: 40px;
 }
 
-/* --- Card Icon --- */
-.card-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  color: #5f06e2;
-  transition: transform 0.5s ease;
+.num {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
 }
 
-/* --- Hover Effects --- */
-.feature-card:hover {
-  transform: translateY(-15px);
-  background: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 15px 45px rgba(31, 38, 135, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+.icon svg {
+  width: 44px;
+  height: 44px;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.4s var(--ease-in), transform 0.5s var(--ease-in);
 }
 
-.feature-card:hover .card-icon {
-  transform: scale(1.1) rotate(10deg);
-  color: #cb479b;
+.card:hover .icon svg {
+  stroke: var(--red);
+  transform: translateY(-4px);
 }
 
-/* --- Card Heading --- */
-.card-heading {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  font-family: 'League Spartan', 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: #1e293b;
-  text-align: center;
+.heading {
+  font-size: clamp(30px, 3.4vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
 }
 
-/* --- Card Description --- */
-.card-description {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  font-family: "Montserrat", sans-serif;
+.line {
+  font-size: 18px;
   font-weight: 500;
-  color: #475569;
-  text-align: center;
+  color: var(--red);
+  margin-bottom: 14px;
 }
 
-/* --- Responsive Design --- */
-@media (max-width: 1024px) {
-  .feature-grid {
-    grid-template-columns: repeat(1, 1fr);
-    max-width: 500px;
-    gap: 3.5rem; /* Increased gap for mobile */
-  }
+.description {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--ink-soft);
+  max-width: 36ch;
 }
 
-@media (max-width: 480px) {
-  .card-heading {
-    font-size: 1.5rem;
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
-  .card-description {
-    font-size: 1rem;
+
+  .card,
+  .card + .card {
+    padding: 28px 0 20px;
+    border-left: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .top {
+    margin-bottom: 20px;
   }
 }
