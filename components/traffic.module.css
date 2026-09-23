@@ -1,12 +1,44 @@
-@keyframes ping {
-    0% {
-        color: black;
-    }
-    100% {
-        color: green;
-    }
+.status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  font-size: 13.5px;
+  color: var(--muted);
 }
 
-.ping {
-    animation: ping 0.8s infinite alternate;
+.status strong,
+.status b {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3b9b6b;
+  animation: ping 1.6s var(--ease-in) infinite alternate;
+}
+
+.down {
+  background: var(--red);
+}
+
+.ping b {
+  font-variant-numeric: tabular-nums;
+}
+
+.logo {
+  height: 20px;
+  width: auto;
+  margin-left: auto;
+  opacity: 0.8;
+}
+
+@keyframes ping {
+  from { opacity: 1; }
+  to { opacity: 0.3; }
 }

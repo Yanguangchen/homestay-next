@@ -1,46 +1,118 @@
-.containerWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex-direction: column;
-  }
-  
-  /* Optional title class if you ever need to style a heading */
-  .title {
-    text-align: center;
-    color: #000;
-  }
-  
-  .canvaEmbed {
-    position: relative;
-    width: 100%;
-    padding-bottom: 0;
-  }
-  
-  /* 
-    If you want to style the iframe via CSS instead of inline styles,
-    you can apply .canvaIframe here:
-  */
-  .canvaIframe {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .button {
-    transition: 0.3s ease-in-out;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  }
+.section {
+  background: var(--paper);
+}
 
-  .button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
-    cursor: pointer;
-    border-radius: 15px;
-    }
-  
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: clamp(32px, 4vw, 56px);
+}
+
+.updated {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Banner brings its own .wrap; cancel its gutter when nested */
+.notices {
+  margin: 0 calc(var(--gutter) * -1) 48px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.meta b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  margin-top: 8px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.table th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 10px 12px 10px 0;
+  border-bottom: 1.5px solid var(--ink);
+}
+
+.table td {
+  padding: 11px 12px 11px 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.table td:first-child {
+  color: var(--ink);
+  font-weight: 400;
+  width: 55%;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 8px;
+}
+
+.cols h4 {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+
+.cols ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cols li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.sdgs b {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--paper);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .cols {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,89 @@
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 96px);
+}
+
+.chapter {
+  border-top: 1.5px solid var(--ink);
+  padding-top: 20px;
+}
+
+.year {
+  display: block;
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: var(--red);
+  margin-bottom: 24px;
+}
+
+.chapter h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.chapter p {
+  font-weight: 300;
+  color: var(--ink-soft);
+}
+
+.why {
+  background: var(--paper-2);
+  border-top: 1px solid var(--line);
+}
+
+.reasons {
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line-strong);
+}
+
+.reasons li {
+  padding: 24px 20px 0 0;
+}
+
+.reasons li + li {
+  padding-left: 20px;
+  border-left: 1px solid var(--line);
+}
+
+.num {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.reasons h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 28px 0 10px;
+}
+
+.reasons p {
+  font-weight: 300;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .story,
+  .reasons {
+    grid-template-columns: 1fr;
+  }
+
+  .reasons li,
+  .reasons li + li {
+    padding: 20px 0;
+    border-left: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .reasons h3 {
+    margin-top: 10px;
+  }
+}

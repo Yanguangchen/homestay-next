@@ -4,7 +4,7 @@
     max-width: 900px;
     margin: 40px auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
+    font-family: var(--font);
     background-color: #f7f7f7;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

@@ -36,8 +36,12 @@ function NavBar() {
       <div className="navbar-pill">
         <div className="navbar-content">
           <div className="navbar-logo">
-             <Link href="/" className="logo-text">
-              sglearninghub
+            <Link href="/" className="logo-text" aria-label="sglearninghub home">
+              <svg className="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+                <circle cx="16" cy="16" r="15" fill="var(--red)" />
+                <path d="M6 21h20M9 21v-6h3v6M14 21V9h4v12M20 21v-8h3v8" stroke="var(--paper)" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span className="logo-word">sg<span>learning</span>hub</span>
             </Link>
           </div>
 
@@ -54,13 +58,20 @@ function NavBar() {
                 href="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/04/09/07/20250409072726-G90M1ZE0.json" 
                 className="nav-link-ai"
               >
-                Chat with AI
+                Ask our assistant
               </Link>
             </div>
           ) : (
-            <div className="hamburger" onClick={toggleMenu}>
-              &#9776;
-            </div>
+            <button
+              type="button"
+              className={`hamburger ${isMenuOpen ? "open" : ""}`}
+              onClick={toggleMenu}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+            >
+              <span />
+              <span />
+            </button>
           )}
         </div>
 
@@ -78,7 +89,7 @@ function NavBar() {
               className="mobile-link-ai"
               onClick={toggleMenu}
             >
-              Chat with AI
+              Ask our assistant
             </Link>
           </div>
         )}

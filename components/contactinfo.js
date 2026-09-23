@@ -10,33 +10,45 @@ const ElfsightWidget = dynamic(
 
 function ContactInfo() {
   return (
-    <div className={`${styles.containerWrapper} ${styles.contact}`}>
-      <h1 className={styles.contactTitle}>Contact Information</h1>
+    <section className={`section ${styles.section}`}>
+      <div className="wrap">
+        <div className={styles.grid}>
+          <div data-reveal>
+            <p className="eyebrow">Contact</p>
+            <h2 className={styles.contactTitle}>
+              Planning a group for next year? <em>Start the conversation now.</em>
+            </h2>
+            <p className="section-lede">
+              School exchanges need six months or more to arrange. Tell us your
+              dates, group size and what your students study, and we&rsquo;ll
+              take it from there.
+            </p>
+          </div>
 
-      <div className={`${styles.bodyStyle} ${styles.contactBody}`}>
-        {/* Left Column: Contact Details */}
-        <div className={styles.subContent}>
-          <p className={styles.pStyle}>
-            <strong>Office Number:</strong> <br></br>
-            +65 63421527
-            <br></br>
-            homestay@singnet.com
-          </p>
+          <div className={styles.cards} data-reveal style={{ "--reveal-delay": "0.12s" }}>
+            <a className={styles.card} href="tel:+6563421527">
+              <span className={styles.cardLabel}>Office</span>
+              <span className={styles.cardValue}>+65 6342 1527</span>
+            </a>
+            <a className={styles.card} href="mailto:homestay@singnet.com">
+              <span className={styles.cardLabel}>Email</span>
+              <span className={styles.cardValue}>homestay@singnet.com</span>
+            </a>
+            <div className={styles.card}>
+              <span className={styles.cardLabel}>Find us</span>
+              <span className={styles.address}>
+                JustCo – Changi Airport Terminal 3 Coworking &amp; Office Space,
+                65 Airport Blvd., #03-37 Terminal 3, Singapore 819663
+              </span>
+            </div>
+          </div>
         </div>
 
-        {/* Right Column: Service Hours */}
-        <div className={styles.subContent}>
-          <p className={styles.openingTime}>
-            JustCo – Changi Airport Terminal 3 Coworking & Office Space 65
-            Airport Blvd., #03-37 Terminal 3, Singapore 819663
-          </p>
+        <div className={styles.widget}>
+          <ElfsightWidget widgetId="0450dfe3-4235-4177-a2d0-bc862350342d" />
         </div>
       </div>
-      
-      <div style={{ marginTop: "40px", width: "100%" }}>
-        <ElfsightWidget widgetId="0450dfe3-4235-4177-a2d0-bc862350342d" />
-      </div>
-    </div>
+    </section>
   );
 }
 

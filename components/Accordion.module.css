@@ -1,125 +1,188 @@
-/* --- General Typography & Defaults --- */
 .accordionContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Montserrat", sans-serif;
   width: 100%;
 }
 
-/* Outer wrapper for each accordion item */
 .accordionItem {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  margin-top: 1.5rem;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
-  transition: all 0.3s ease;
+  border-top: 1px solid var(--line-strong);
 }
 
-.accordionItem:hover {
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+.accordionContainer:last-child .accordionItem {
+  border-bottom: 1px solid var(--line-strong);
 }
 
-/* Top button (accordion header) */
 .accordionButton {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 18px;
   width: 100%;
-  padding: 1.5rem 2rem;
+  padding: 24px 0;
   text-align: left;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: clamp(19px, 2vw, 24px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
   background: transparent;
-  color: #1e293b;
+  color: var(--ink);
   border: none;
   cursor: pointer;
-  font-family: 'League Spartan', 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  transition: color 0.3s var(--ease-in);
 }
 
 .accordionButton:hover {
-  background: rgba(255, 255, 255, 0.2);
+  color: var(--red);
 }
 
-/* Accordion title text */
+.accordionIndex {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  min-width: 22px;
+}
+
 .accordionTitle {
-  font-weight: 700;
+  flex: 1;
 }
 
-/* The "+" icon */
+/* A plus drawn with two bars that rotates into a minus */
 .accordionIcon {
-  margin-left: 0.5rem;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  font-size: 1.5rem;
-  color: #5f06e2;
+  position: relative;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  transition: background 0.35s var(--ease-in), transform 0.45s var(--ease-in);
+}
+
+.accordionIcon::before,
+.accordionIcon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 1.5px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: transform 0.45s var(--ease-in);
+}
+
+.accordionIcon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .accordionIcon.open {
-  transform: rotate(45deg);
-  color: #cb479b;
+  background: var(--ink);
+  color: var(--paper);
+  transform: rotate(180deg);
 }
 
-/* Collapsible content container */
+.accordionIcon.open::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
 .accordionContent {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
-  background: transparent;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s var(--ease-in);
 }
 
 .accordionContent.open {
-  max-height: 2000px;
+  grid-template-rows: 1fr;
 }
 
-/* Inner area where the actual content sits */
 .accordionInner {
-  padding: 0 2rem 2rem 2rem;
-  color: #475569;
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.6;
+  overflow: hidden;
+  min-height: 0;
+  color: var(--ink-soft);
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+.accordionContent.open .accordionInner {
+  padding-bottom: 28px;
 }
 
 .accordionInner p {
   margin-bottom: 1rem;
 }
 
-.accordionInner ul {
-  margin-top: 10px;
+.accordionInner h3,
+.accordionInner h4 {
+  color: var(--ink);
 }
 
-.accordionInner li {
-  margin-bottom: 8px;
+/* ---- Programs section (homepage) ---- */
+.programs {
+  background: var(--paper-2);
+  border-top: 1px solid var(--line);
 }
 
-/* Additional styling for container */
-.employmentAgencySection {
-  max-width: 1000px;
-  margin: 0 auto 5% auto;
-  padding: 0 20px;
+.split {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .accordionButton {
-    padding: 1.25rem 1.5rem;
-    font-size: 1rem;
+.aside {
+  position: sticky;
+  top: 120px;
+}
+
+.aside :global(.section-lede) {
+  margin-top: 20px;
+}
+
+.callout {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink);
+  border-left: 3px solid var(--red);
+  padding-left: 16px;
+}
+
+.note {
+  font-size: 14.5px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.timeBox {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.timeBox p {
+  margin: 0;
+}
+
+.timeFigure {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--red);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
   }
 
-  .accordionInner {
-    padding: 0 1.5rem 1.5rem 1.5rem;
+  .aside {
+    position: static;
+  }
+
+  .timeBox {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 }

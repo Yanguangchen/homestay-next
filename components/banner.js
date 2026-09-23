@@ -1,123 +1,76 @@
 "use client";
+import styles from "./banner.module.css";
 
+// The two notices below are required to stay at the very top of the homepage.
 function Banner() {
-    const styles = {
-      container: {
-        fontFamily: "Montserrat, sans-serif",
-        width: "100%",
-        padding: "20px 0",
-      },
-      header: {
-        fontSize: "24px",
-        fontWeight: "bold",
-        marginBottom: "10px",
-      },
-      subHeader: {
-        fontSize: "18px",
-        fontWeight: "bold",
-        marginBottom: "10px",
-      },
-      date: {
-        fontSize: "14px",
-        color: "#666",
-        marginBottom: "20px",
-      },
-      section: {
-        marginBottom: "20px",
-      },
-      list: {
-        paddingLeft: "20px",
-        marginBottom: "15px",
-      },
-      listItem: {
-        marginBottom: "8px",
-      },
-      table: {
-        width: "100%",
-        marginTop: "10px",
-      },
-      th: {
-        backgroundColor: "#212121",
-        padding: "8px",
-        textAlign: "left",
-        color: "white",
-  
-      },
-      td: {
-        padding: "8px",
-        color: "#333",
-  
-      },
-      infoBox: {
-        background: "rgba(255, 255, 255, 0.4)",
-        backdropFilter: "blur(10px)",
-        WebkitBackdropFilter: "blur(10px)",
-        border: "1px solid rgba(255, 255, 255, 0.3)",
-        borderRadius: "15px",
-        padding: "25px",
-        marginBottom: "30px",
-        boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.15)",
-        color: "#333",
-      },
-      infoHeader: {
-        fontSize: "18px",
-        fontWeight: "bold",
-        marginBottom:"10px",
-        color: "#333",
-      },
-    };
-  
-    return (
-      <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", width: "80%", margin: "0 auto" }}>
-        <div className="info-box" style={{ flex: "1 1 300px", minWidth: "280px" }}>
-          <h2 style={styles.infoHeader}>
-            Important Information Before Your Arrival
-          </h2>
-          <ul style={styles.list}>
-            <li style={styles.listItem}>
-              Upon arrival, you must stay in a hotel for one or two nights.
-            </li>
-            <li style={styles.listItem}>
-              You must register with a tuition center or an educational institute
-              registered with the Ministry of Education.
-            </li>
-          </ul>
-        </div>
-        <div className="info-box" style={{ flex: "1 1 300px", minWidth: "280px" }}>
-          <h2 style={styles.infoHeader}>Our Interaction Program</h2>
-          <p style={{ color: "#4b5563", marginBottom: "10px" }}>
-            Upon requesting an exchange program that involves interaction with
-            local people:
-          </p>
-          <ul style={styles.list}>
-            <li style={styles.listItem}>
-              We will discuss your specific interests (cultural, linguistic, or
-              otherwise) to tailor the experience to your preferences.
-            </li>
-            <li style={styles.listItem}>
-              We will find a suitable host family based on your needs.
-            </li>
-            <li style={styles.listItem}>
-              Participants will be attached to a host family, who will be informed
-              about your attendance in the Study Tour workshop.
-            </li>
-            <li style={styles.listItem}>
-              This program provides opportunities to experience local culture &
-              tradition, engage in cultural diplomacy, build friendships, develop
-              intercultural competence, and practice language.
-            </li>
-            <li style={styles.listItem}>
-              Additionally, participants can gain valuable local insight and
-              advice.
-            </li>
-            <li style={styles.listItem}>
-              These programs are designed to enhance participants' language skills
-              and deepen their understanding of the native culture and traditions.
-            </li>
-          </ul>
-        </div>
+  return (
+    <section className={`wrap ${styles.banner}`} aria-label="Before you arrive">
+      <div className={styles.strip}>
+        <span className={styles.dot} aria-hidden="true" />
+        Read this before you book a flight
       </div>
-    );
-  }
-  
-  export default Banner;
+
+      <div className={styles.grid}>
+        <article className={styles.pass}>
+          <div className={styles.stub}>
+            <span className={styles.stubLabel}>Notice</span>
+            <span className={styles.stubNum}>01</span>
+            <span className={styles.stubCode}>SIN · ARR</span>
+          </div>
+          <div className={styles.body}>
+            <h2 className={styles.title}>Important information before your arrival</h2>
+            <ul className={styles.list}>
+              <li>
+                <span className={styles.tag}>Stay</span>
+                Upon arrival, you must stay in a hotel for one or two nights.
+              </li>
+              <li>
+                <span className={styles.tag}>Register</span>
+                You must register with a tuition centre or an educational institute
+                registered with the Ministry of Education.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article className={styles.pass}>
+          <div className={`${styles.stub} ${styles.stubTeal}`}>
+            <span className={styles.stubLabel}>Program</span>
+            <span className={styles.stubNum}>02</span>
+            <span className={styles.stubCode}>HOST · SG</span>
+          </div>
+          <div className={styles.body}>
+            <h2 className={styles.title}>Our interaction program</h2>
+            <p className={styles.intro}>
+              When you request an exchange that involves living and learning
+              alongside local people:
+            </p>
+            <ol className={styles.steps}>
+              <li>
+                We discuss your specific interests (cultural, linguistic or
+                otherwise) to tailor the experience to you.
+              </li>
+              <li>We find a suitable host family based on your needs.</li>
+              <li>
+                You are attached to that host family, who will be informed about
+                your attendance in the Study Tour workshop.
+              </li>
+              <li>
+                You experience local culture &amp; tradition, take part in
+                cultural diplomacy, build friendships, develop intercultural
+                competence and practise the language.
+              </li>
+              <li>You also gain valuable local insight and advice.</li>
+              <li>
+                Every program is designed to strengthen your language skills and
+                deepen your understanding of the native culture and traditions.
+              </li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+export default Banner;

@@ -1,46 +1,44 @@
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    font-family: "Arial", sans-serif;
-  }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .articleCard {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-  }
-  
-  .articleCard:hover {
-    transform: translateY(-3px);
-  }
-  
-  .articleTitle {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #2c3e50;
-  }
-  
-  .articleBody {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
-  }
-  
-  .loading {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #777;
-  }
-  
+  max-width: 820px;
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 96px) var(--gutter);
+}
+
+.header {
+  font-size: clamp(44px, 8vw, 96px);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  margin-bottom: 40px;
+}
+
+.articleCard {
+  padding: 28px 0;
+  border-top: 1px solid var(--line-strong);
+  transition: padding 0.35s var(--ease-in);
+}
+
+.articleCard:hover {
+  padding-left: 10px;
+}
+
+.articleTitle {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.articleBody {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  white-space: pre-line;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--muted);
+  padding: 80px 0;
+}

@@ -2,6 +2,7 @@ import "../styles/body.css";
 import "../styles/grid.css";
 import "../styles/navbar.css";
 import Navbar from "../components/navbar";
+import RevealObserver from "../components/RevealObserver";
 import Script from "next/script";
 
 export const metadata = {
@@ -82,14 +83,13 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/apple-icon.png" />
 
         {/* Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <link
-          href="https://fonts.googleapis.com/css?family=League+Spartan"
-          rel="stylesheet"
-        />
+        <meta name="theme-color" content="#f6f0e4" />
 
         <script
           type="application/ld+json"
@@ -117,8 +117,9 @@ export default function RootLayout({ children }) {
         ></div>
         
         <Navbar />
+        <RevealObserver />
 
-        <main style={{ paddingTop: "100px" }}>
+        <main style={{ paddingTop: "88px" }}>
           <div id="root"></div>
           {children}
         </main>
